@@ -10,7 +10,7 @@ class ProdutosController extends Controller
     public function index()
     {
         // $produtos = Produto::all();
-        $produtos = Produto::paginate();
+        $produtos = Produto::orderBy('nome', 'asc')->paginate();
         // $count = Produto::all()->count();
 
         return view('produtos.index', ["produtos" => $produtos]);
@@ -31,5 +31,16 @@ class ProdutosController extends Controller
     public function create()
     {
         return view('produtos.create');
+    }
+
+    public function insert(Request $request)
+    {
+
+        $produto = new Produto();
+        $produto->nome = $request->nome; 
+        $produto->valor = $request->valor; 
+        $produto->descricao = $request->descricao; 
+        $produto->save();
+        return redirect()->route('produtos');
     }
 }
