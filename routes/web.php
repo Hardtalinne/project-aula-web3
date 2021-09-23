@@ -37,9 +37,10 @@ Route::get('/home-principal',[ HomeController::class, 'principal']);
 
 //produtos Controllers
 Route::get('/produtos',[ ProdutosController::class, 'index'])->name('produtos');
-Route::get('/produtos/{id}',[ ProdutosController::class, 'show'])->name('produtos.ver');
+Route::get('/produtos/show/{id}',[ ProdutosController::class, 'show'])->name('produtos.ver');
 Route::get('/produtos/create',[ ProdutosController::class, 'create'])->name('produtos.inserir');
-Route::get('/produtos/{nome}/{quantidade}/{preco}',[ ProdutosController::class, 'show']);
+Route::get('/produtos/show-search/{nome}/{quantidade}/{preco}',[ ProdutosController::class, 'show']);
+Route::post('/produtos/create',[ ProdutosController::class, 'insert'])->name('produtos.inserir');
 
 //categoriaControllers
 Route::get('/categoria',[ CategoriaController::class, 'index']);
