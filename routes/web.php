@@ -41,6 +41,8 @@ Route::get('/produtos/show/{id}',[ ProdutosController::class, 'show'])->name('pr
 Route::get('/produtos/create',[ ProdutosController::class, 'create'])->name('produtos.inserir');
 Route::get('/produtos/show-search/{nome}/{quantidade}/{preco}',[ ProdutosController::class, 'show']);
 Route::post('/produtos/create',[ ProdutosController::class, 'insert'])->name('produtos.inserir');
+Route::get('/produtos/{produto}/edit',[ ProdutosController::class, 'edit'])->name('produtos.edit');
+Route::put('/produtos/{produto}',[ ProdutosController::class, 'editar'])->name('produtos.editar');
 
 //categoriaControllers
 Route::get('/categoria',[ CategoriaController::class, 'index']);
