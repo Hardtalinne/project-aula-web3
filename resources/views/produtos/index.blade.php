@@ -31,7 +31,7 @@
             <a href="{{route('produtos.ver', $produto->id)}}" title="Detalhe do produto">
                 <button type="button" class="btn btn-dark sm"><i class="fas fa-eye"></i></button>
             </a>
-            <a href="{{route('produtos.ver', $produto->id)}}" title="Alterar o produto">
+            <a href="{{route('produtos.edit', $produto)}}" title="Editar o produto">
                 <button type="button" class="btn btn-warning sm"><i class="fas fa-pencil-alt"></i></button>
             </a>
              <a href="{{route('produtos.ver', $produto->id)}}" title="Excluir o produto">
