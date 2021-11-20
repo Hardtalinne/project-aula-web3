@@ -18,12 +18,9 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><i class="fas fa-dice-d6"></i> IFPR App </a>
@@ -52,13 +49,10 @@
             </div>
         </div>
     </nav>
-
-
     <div class="container">
         @include('mensagem')
         @yield('conteudo')
     </div>
-
 </body>
 
 </html>
