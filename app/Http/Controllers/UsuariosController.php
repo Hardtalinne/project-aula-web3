@@ -17,6 +17,6 @@ class UsuariosController extends Controller
         if ($usuarios === 1) {
             return view('home');
         }
-        return view('login');
+        return redirect()->back()->withErrors("Usuário/Senha inválidos");
     }
 }

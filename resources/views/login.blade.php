@@ -26,7 +26,10 @@
                 <h5 class="card-title fs-2">Login</h5>
             </div>
         </div>
-        <form method="POST" action="{{route('usuarios.login')}}">
+
+        @include('erros', ['errors' => $errors])
+
+        <form method="POST" action="{{ route('usuarios.login') }}">
             @csrf
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
