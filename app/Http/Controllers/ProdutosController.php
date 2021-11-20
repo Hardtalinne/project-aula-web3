@@ -35,13 +35,15 @@ class ProdutosController extends Controller
 
     public function insert(Request $request)
     {
-
         $produto = new Produto();
-        $produto->nome = $request->nome; 
-        $produto->valor = $request->valor; 
-        $produto->descricao = $request->descricao; 
+        $produto->nome = $request->nome;
+        $produto->valor = $request->valor;
+        $produto->descricao = $request->descricao;
         $produto->save();
-        return redirect()->route('produtos');
+
+        $mensagem = "Produto {{$produto->nome}} cadastrado com sucesso!";
+        // outra forma de fazer o flash --- $request->session()->flash('success', $mensagem)
+        return redirect()->route('produtos')->with('success', $mensagem);
     }
 
     public function edit(Produto $produto)
@@ -51,11 +53,14 @@ class ProdutosController extends Controller
 
     public function editar(Request $request, Produto $produto)
     {
-        $produto->nome = $request->nome; 
-        $produto->valor = $request->valor; 
-        $produto->descricao = $request->descricao; 
+        $produto->nome = $request->nome;
+        $produto->valor = $request->valor;
+        $produto->descricao = $request->descricao;
         $produto->save();
-        return redirect()->route('produtos');
+
+        $mensagem = "Produto {{$produto->nome}} alterado com sucesso!";
+
+        return redirect()->route('produtos')->with('success', $mensagem);
     }
 
     public function delete(Produto $produto)
@@ -65,7 +70,8 @@ class ProdutosController extends Controller
 
     public function deletar(Produto $produto)
     {
+        $mensagem = "Produto {{$produto->nome}} excluido com sucesso!";
         $produto->delete();
-        return redirect()->route('produtos');
+        return redirect()->route('produtos')->with('success', $mensagem);
     }
 }
