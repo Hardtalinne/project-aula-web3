@@ -43,6 +43,8 @@ Route::get('/produtos/show-search/{nome}/{quantidade}/{preco}',[ ProdutosControl
 Route::post('/produtos/create',[ ProdutosController::class, 'insert'])->name('produtos.inserir');
 Route::get('/produtos/{produto}/edit',[ ProdutosController::class, 'edit'])->name('produtos.edit');
 Route::put('/produtos/{produto}',[ ProdutosController::class, 'editar'])->name('produtos.editar');
+Route::get('/produtos/{produto}/delete',[ ProdutosController::class, 'delete'])->name('produtos.delete');
+Route::delete('/produtos/{produto}',[ ProdutosController::class, 'deletar'])->name('produtos.deletar');
 
 //categoriaControllers
 Route::get('/categoria',[ CategoriaController::class, 'index']);

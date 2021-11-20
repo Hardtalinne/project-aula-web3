@@ -34,7 +34,7 @@
             <a href="{{route('produtos.edit', $produto)}}" title="Editar o produto">
                 <button type="button" class="btn btn-warning sm"><i class="fas fa-pencil-alt"></i></button>
             </a>
-             <a href="{{route('produtos.ver', $produto->id)}}" title="Excluir o produto">
+             <a href="{{route('produtos.delete', $produto->id)}}" title="Excluir o produto">
                 <button type="button" class="btn btn-danger sm"><i class="fas fa-trash-alt"></i></button>
             </a>
         </td>

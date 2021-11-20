@@ -57,4 +57,15 @@ class ProdutosController extends Controller
         $produto->save();
         return redirect()->route('produtos');
     }
+
+    public function delete(Produto $produto)
+    {
+        return view('produtos.delete', ['produto' => $produto]);
+    }
+
+    public function deletar(Produto $produto)
+    {
+        $produto->delete();
+        return redirect()->route('produtos');
+    }
 }
